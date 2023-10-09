@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="/css/modal.css" />
+
+<form action="/review/update-feedback" method="post" onsubmit="updateFeedback(this,event)">
+  <input type="hidden" name="review_id" value="<%= review.id %>">
+  <div class="modal-header">
+    <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Feedback</h1>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="modal"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <div class="form-item">
+      <label for="for_user" class="form-label">For Employee</label>
+      <input type="hidden" name="for_user" value="<%= review.for_user.id %>" />
+      <input
+        type="text"
+        class="form-control"
+        id="for_user_name"
+        name="for_user_name"
+        value="<%= review.for_user.name %>"
+        readonly
+        required
+      />
+      <input
+        type="email"
+        class="form-control"
+        id="for_user_email"
+        name="for_user_email"
+        value="<%= review.for_user.email %>"
+        readonly
+        required
+      />
+    </div>
+    <div class="form-item">
+      <label for="from_user" class="form-label">From Employee</label>
+      <input type="hidden" name="from_user" value="<%= review.from_user.id %>" />
+      <input
+        type="text"
+        class="form-control"
+        id="from_user_name"
+        name="from_user_name"
+        value="<%= review.from_user.name %>"
+        readonly
+        required
+      />
+      <input
+        type="email"
+        class="form-control"
+        id="from_user_email"
+        name="from_user_email"
+        value="<%= review.from_user.email %>"
+        readonly
+        required
+      />
+    </div>
+    <div class="form-item">
+      <label for="feedback" class="form-label">Feedback</label>
+      <textarea
+        placeholder="Enter Feedback For the Employee"
+        name="feedback"
+        id="feedback"
+      ><% if (review.feedback) { %><%= review.feedback %><% } %></textarea>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+      Cancel
+    </button>
+    <button type="submit" class="btn btn-success">Update</button>
+  </div>
+</form>

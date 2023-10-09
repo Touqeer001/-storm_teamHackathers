@@ -1,0 +1,54 @@
+<style>
+  /* Custom CSS for centering the button and adding padding/margin */
+  .btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 20px; /* Adjust the top margin as needed */
+    padding: 10px 53px 10px;
+  }
+
+  .container {
+    font-family: math;
+    font-size: larger;
+    font-weight: 900;
+  }
+</style>
+
+<div class="container mt-5 bg-cream">
+  <h1 class="mb-4">Pulse Survey</h1>
+  <form id="pulse-survey-form" action="/submit-plussurvey-form" method="POST">
+    <div class="form-group">
+      <label for="question1"
+        >Question 1: How satisfied are you with your work?</label
+      >
+      <select class="form-control" id="plusSurvey" name="plusSurvey">
+        <option value="VerySatisfied">Very Satisfied</option>
+        <option value="Satisfied">Satisfied</option>
+        <option value="Neutral">Neutral</option>
+        <option value="Dissatisfied">Dissatisfied</option>
+        <option value="VeryDissatisfied">Very Dissatisfied</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="question2">Question 2: Do you feel heard by your team?</label>
+      <select class="form-control" id="plusSurvey2" name="plusSurvey2">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="question3">Question 3: Additional comments (optional)</label>
+      <textarea
+        class="form-control"
+        id="plusSurvey3"
+        name="plusSurvey3"
+        rows="4"
+      ></textarea>
+    </div>
+    <div class="d-flex justify-content-center p-4">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>

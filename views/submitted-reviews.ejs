@@ -1,0 +1,28 @@
+<table class="display dataTable" id="submitted-reviews-table">
+  <thead>
+    <tr>
+      <th>Employee</th>
+      <th>Email-Id</th>
+      <th>Feedback</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% submitted_reviews.forEach(review => { %>
+
+    <tr id="row-<%= review.for_user.id %>">
+      <td class="user-name"><%= review.for_user.name %></td>
+      <td class="user-email"><%= review.for_user.email %></td>
+      <td>
+        <i
+          class="fas fa-eye"
+          style="color: #038705"
+          data-bs-toggle="modal"
+          data-bs-target="#modal"
+          onclick="viewFeedback(this,'<%- review.for_user.id %>')"
+        ></i>
+      </td>
+    </tr>
+
+    <% }) %>
+  </tbody>
+</table>

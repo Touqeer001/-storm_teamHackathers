@@ -1,0 +1,57 @@
+header nav {
+  /* background-color: #6e3ea3; */
+  /* background: linear-gradient(to right, #434343, #000000); */
+  background-image: linear-gradient(to right, #b6fbff, #83a4d4);
+  height: 80px; }
+  header nav .navbar-brand {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: "Alkatra", cursive;
+    font-size: 2.5rem;
+    font-weight: bold; }
+  header nav .user-name {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white; }
+  header nav .icon {
+    background-color: antiquewhite;
+    margin-left: 10px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    header nav .icon a {
+      text-decoration: none;
+      color: #721515; }
+    header nav .icon a:hover {
+      color: #152b72; }
+    header nav .icon .user-icon {
+      font-size: 2.5rem; }
+    header nav .icon .home-icon {
+      font-size: 1.5rem; }
+    header nav .icon .logout-icon {
+      background-color: #dc3545;
+      color: white;
+      font-size: 1.5rem;
+      height: 50px;
+      width: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100%; }
+    header nav .icon img {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%; }
+
+      .btn {
+        margin-left: 20px;
+      }

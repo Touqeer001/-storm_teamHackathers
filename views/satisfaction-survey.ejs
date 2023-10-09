@@ -1,0 +1,107 @@
+<style>
+    *{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+font-family: sans-serif;
+}
+
+.formh1{
+text-align: center;
+padding:1rem;
+margin: 1rem 20rem;
+border: 1px solid black;
+border-radius: 2px;
+}
+main{
+border: 1px solid black;
+padding: 10;
+border-radius: 2px;
+padding: 1rem;
+margin: 1rem 20rem;
+}
+.sectionh3{
+margin-bottom: 15px;
+margin-top: 15px;
+
+}
+form{
+background-color: #ffffff;
+}
+.question{
+padding: 5px;
+}
+select{
+padding: 5px;
+margin-top: 7px;
+margin-left: 30px;
+}
+textarea{
+padding: 5px;
+margin-top: 7px;
+margin-left: 30px;
+}
+.submit_btn{
+text-align: center;
+display: flex;
+padding: 5px ;
+border-radius: 2px;
+cursor: pointer;
+margin-top: 10px;
+margin-left: 50%;
+}
+</style>
+
+<form action="/submit-satisfaction-form" method="POST">
+    <!-- section1 -->
+    <section class="sectionform">
+        <h3 class="sectionh3">Section1: Demographics</h3>
+        <!-- question 1 -->
+        <div class="question">
+            <label for="department">1.1. Please select your department:</label>
+            <br>
+        <select name="department" id="department">
+            <option value="Sales">Sales</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Human Resources">Human Resources</option>
+            <option value="Finance">Finance</option>
+            <option value="Operations">Operations</option>
+            <option value="Other">Other</option>
+        </select>
+        </div>
+        
+        
+    </section>
+
+    <!-- section2 -->
+    <section class="sectionform">
+        <h3 class="sectionh3">Section 2: Job Satisfaction</h3>
+        <!-- question1 -->
+        <div class="question">
+            <label for="satisfaction">2.1. On a scale of 1 to 5, please rate your overall job satisfaction.</label>
+            <br>
+            <select name="satisfaction" id="satisfaction">
+            <option value="VeryDissatisfied">1 (Very Dissatisfied)</option>
+            <option value="Dissatisfied">2 (Dissatisfied)</option>
+            <option value="Nseutral">3 (Neutral)</option>
+            <option value="Satisfied">4 (Satisfied)</option>
+            <option value="Very Satisfied">5 (Very Satisfied)</option>
+        </select>
+        </div>
+                    
+
+        <!-- question2 -->
+
+        <div class="question">
+            <label for="enjoy">2.2. What aspects of your job do you enjoy the most?</label>
+            <br>
+            <textarea name="enjoy" id="enjoy" cols="40" rows="2" placeholder="Enter your answer here"></textarea>
+        </div>
+        
+    
+    </section>  
+        <input type="hidden" name="email" id="email" value="<%= user.email %>">
+       <input type="hidden" name="username" id="username" value="<%= user.name %>">
+        <button type="submit" class="submit_btn">Submit Form</button>
+
+</form>

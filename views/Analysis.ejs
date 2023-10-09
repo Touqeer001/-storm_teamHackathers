@@ -1,0 +1,260 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="analysis.css" />
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+      .hundredbar {
+        width: 33rem;
+        height: 2rem;
+        background: linear-gradient(
+          to right,
+          green 0%,
+          green 75%,
+          darkgray 75%,
+          darkgray 100%
+        );
+        margin-bottom: 10px;
+      }
+      body {
+        background-image: url(bg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .h2is {
+        margin-left: 60px;
+      }
+      .span1 {
+        display: inline;
+        padding-left: 45%;
+        margin-top: 10px;
+        text-align: center;
+        font-weight: 700;
+      }
+      .circlebar {
+        width: 50px;
+        height: 50px;
+        border-radius: 5rem;
+        background-color: linear-gradient(
+          to left,
+          green 0%,
+          green 75%,
+          darkgray 75%,
+          darkgray 100%
+        );
+      }
+      .circle {
+        position: relative;
+        width: 20rem;
+        height: 18rem;
+        background: conic-gradient(green 75%, black 25%, transparent 0);
+        border-radius: 50%;
+        box-shadow: 0 0 0 10px white;
+        align-items: center;
+        text-align: center;
+        margin-top: 50px;
+        margin-left: 100px;
+      }
+      .tdp {
+        width: 15rem;
+        height: 1rem;
+        background: linear-gradient(
+          to right,
+          green 0%,
+          green 75%,
+          darkgray 75%,
+          darkgray 100%
+        );
+        text-align: center;
+      }
+      .tdp1 {
+        padding-right: 50px;
+        background: linear-gradient(
+          to right,
+          rgb(221, 255, 1) 0%,
+          rgb(221, 255, 1) 50%,
+          darkgray 50%,
+          darkgray 100%
+        );
+      }
+      .span2 {
+        font-weight: 600;
+      }
+      .tdp2 {
+        background: linear-gradient(
+          to right,
+          rgb(255, 123, 0) 0%,
+          rgb(255, 123, 0) 60%,
+          darkgray 60%,
+          darkgray 100%
+        );
+      }
+      .tdp3 {
+        background: linear-gradient(
+          to right,
+          rgb(47, 0, 255) 0%,
+          rgb(47, 0, 255) 40%,
+          darkgray 40%,
+          darkgray 100%
+        );
+      }
+      .tdp4 {
+        background: linear-gradient(
+          to right,
+          rgb(255, 0, 0) 0%,
+          rgb(255, 0, 0) 80%,
+          darkgray 80%,
+          darkgray 100%
+        );
+      }
+      .section1upper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        justify-content: space-around;
+      }
+      .span23 {
+        padding-right: 100px;
+        font-weight: 600;
+      }
+      td,
+      th {
+        padding: 10px 50px;
+      }
+      table,
+      tr,
+      td,
+      th {
+        border: 1px solid black;
+      }
+
+      .analys-h2 {
+        font-size: 2rem;
+        margin-top: 50px;
+        margin-bottom: 30px;
+      }
+      .lap-1 {
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+      .cicle75 {
+        text-align: center;
+        padding-top: 160px;
+        font-size: 2rem;
+        padding-left: 50px;
+        font-weight: 700;
+      }
+
+      .analys-h2new {
+        font-size: 2rem;
+        margin-top: 50px;
+        margin-bottom: 30px;
+        margin-right: 200px;
+      }
+      .headeranalysis {
+        text-align: center;
+        margin-top: 4rem;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="headeranalysis">Employee Performance</h1>
+    </header>
+
+    <main>
+      <div class="section1upper">
+        <div class="leftanalysis1">
+          <h2 class="analys-h2">1.Employee Engagement Progress</h2>
+          <p class="hundredbar"><span class="span1">75%</span></p>
+
+          <p class="lap-1">Engagement Progress</p>
+
+          <div class="circle">
+            <p class="cicle75">75%</p>
+          </div>
+        </div>
+        <div class="rightanalysis1">
+          <h2 class="analys-h2">2.Employee Progress</h2>
+          <table>
+            <tr>
+              <th>Name</th>
+              <th>Progress</th>
+            </tr>
+            <tr>
+              <td>Employee1</td>
+              <td>
+                <p class="tdp"><span class="span2">75%</span></p>
+              </td>
+            </tr>
+            <tr>
+              <td>Employee2</td>
+              <td>
+                <p class="tdp tdp1"><span class="span2">50%</span></p>
+              </td>
+            </tr>
+            <tr>
+              <td>Employee3</td>
+              <td>
+                <p class="tdp tdp2"><span class="span2">60%</span></p>
+              </td>
+            </tr>
+            <tr>
+              <td>Employee4</td>
+              <td>
+                <p class="tdp tdp3"><span class="span23">40%</span></p>
+              </td>
+            </tr>
+            <tr>
+              <td>Employee5</td>
+              <td>
+                <p class="tdp tdp4"><span class="span2">80%</span></p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div id="plot"></div>
+
+      <h2 class="analys-h2 h2is">3.Employee Surveys and Feedback Analysis</h2>
+
+      <div id="bar-chart">
+        <script>
+          // Sample data
+          const data = [
+            {
+              x: ["2020", "2021", "2022", "2023"],
+              y: [10, 15, 19, 25],
+              type: "bar",
+              marker: {
+                color: "rgb(55, 83, 109)",
+              },
+            },
+          ];
+
+          // Layout options
+          const layout = {
+            title: "Feedback Responce improve graphs",
+            xaxis: { title: "Years" },
+            yaxis: { title: "Feedback responce" },
+          };
+
+          // Create the bar chart
+          Plotly.newPlot("bar-chart", data, layout);
+        </script>
+      </div>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>

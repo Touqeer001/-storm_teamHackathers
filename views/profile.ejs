@@ -1,0 +1,194 @@
+<style>
+    *{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+font-family: sans-serif;
+}
+header{
+padding: 50px 10px;
+background-image: url(background.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+box-shadow: 0px -25px 20px -20px rgba(0,0,0,0.45),0px 25px 20px -20px rgba(0,0,0,0.45);
+margin-top: 5px;
+}
+.main_headerprofile{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+align-items: center;
+justify-content: space-around;
+font-family: sans-serif;
+
+}
+.profile-logo{
+width: 9rem;
+border-radius: 15rem;
+border: 1px solid #00FFFF;
+/* padding: 0.rem; */
+padding-top: 10px;
+}
+.li-h3{
+font-size: 1.5rem;
+/* border: 1px solid #00FFFF; */
+/* border-radius: 5rem; */
+margin-bottom: 15px;
+font-weight: 600;
+}
+.btn-danger{
+padding: 2px;
+font-weight: 500;
+}
+.username{
+display: inline-block;
+font-size: 1.2rem;
+margin-left: 10px;
+font-weight: 400;
+}
+.useremail{
+display: inline-block;
+font-size: 1.2rem;
+margin-left: 10px;
+font-weight: 400;
+}
+.Allcards{
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-evenly;
+}
+.myh3{
+text-align: center;
+}
+.card{
+height: 28rem;
+text-align: center;
+width: 20rem;
+/* height: 20rem; */
+align-items: center;
+padding: 10px;
+background-image: linear-gradient( 95.2deg, rgb(192, 249, 235) 26.8%, rgb(156, 212, 238) 64% );
+box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+.card:hover{
+transform: translateY(-5px);
+box-shadow: 2px 10px 20px 10px rgba(0, 0, 0, 0.25)
+}
+#card-img3{
+width: 10.5rem;
+}
+#card-img1{
+width: 9.5rem;
+}
+#card-img2{
+width: 8.3rem;
+padding-top: 5px;
+}
+.card-title{
+font-size: 1.5rem;
+padding: 5px 0;
+font-weight: 600;
+}
+.card-text{
+font-size: 1.2rem;
+}
+.sugestion-p{
+font-size: 1rem;
+border: 1px solid #b3a6a6;
+padding: 0.9rem 1.1rem;
+border-radius: 4px;
+}
+.myh3{
+text-align: center;
+font-size: 2rem;
+padding:30px;
+/* background-color: #00FFFF; */
+/* background-color:rgb(193, 230, 243) !important; */
+background-image: linear-gradient( 95.2deg, rgb(192, 249, 235) 26.8%, rgb(156, 212, 238) 64% );
+/* margin-top: 15px; */
+margin: 0 23rem;
+margin-top: 3rem;
+margin-bottom: 3rem;
+border-radius: 4rem;
+}
+main{
+margin-bottom:50px;
+}
+</style>
+
+<script src="https://kit.fontawesome.com/d77c16afe8.js" crossorigin="anonymous"></script>
+
+<header>
+    <div class="main_headerprofile">
+        <div class="left_info">
+
+            <h3 class="li-h3">User Name:<span class="username"><%= user.name %></span></h3>
+            
+            <h3 class="li-h3">Email-Id:<span class="useremail"><%= user.email %></span></h3>
+            <!-- <a href="" class="sign-out">Sign-Out</a> -->
+            <button type="button" class="btn btn-danger">Sign-Out</button>
+
+        </div>
+
+        <div class="right_info">
+            <img src="<%= user.image %>" alt="Profile_image" class="profile-logo">
+        </div>
+    </div>
+
+</header>
+
+<main>
+    <!-- section1 - MY REVIEW SUBMITTED -->
+    <section>
+      <h2 class="myh3">MY REVIEW SUBMITTED</h2>
+      <div class="row">
+        <% SubmittedData.forEach(function(feedback, index) { %>
+          <div class="col-md-3 mb-4">
+            <div class="card">
+              <!-- Display feedback for submitted reviews -->
+              <img class="card-img-top" src="https://source.unsplash.com/random/400×400/?portrait<%= feedback %>" alt="Card image cap" style="height: 170px; width: 170px; border-radius: 6rem;">
+              <div class="card-body">
+                <h6 class=""><b><%= feedback.user %></b></h6>
+                <p class="card-text">
+                  <% for (let i = 0; i < feedback.rating; i++) { %>
+                    <i class="fa-solid fa-star" style="color: #000000;"></i>
+                  <% } %>
+                </p>
+                <div class="suggestion">
+                  <p class="card-text"><%= feedback.suggestion %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </section>
+  
+    <!-- section2 - MY RECEIVED REVIEW -->
+    <section>
+      <h2 class="myh3">MY RECEIVED REVIEW</h2>
+      <div class="row">
+        <% ReceivedData.forEach(function(feedback, index) { %>
+          <div class="col-md-3 mb-4">
+            <div class="card">
+              <!-- Display feedback for received reviews -->
+              <img class="card-img-top" src="https://source.unsplash.com/random/400×400/?profilemaleface<%= feedback %>" alt="Card image cap" style="height: 170px; width: 170px; border-radius: 6rem;">
+              <div class="card-body">
+                <h6 class=""><b><%= feedback.email %></b></h6>
+                <p class="card-text">
+                  <% for (let i = 0; i < feedback.rating; i++) { %>
+                    <i class="fa-solid fa-star" style="color: #000000;"></i>
+                  <% } %>
+                </p>
+                <div class="suggestion">
+                  <p class="card-text"><%= feedback.suggestion %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </section>
+  </main>
+  

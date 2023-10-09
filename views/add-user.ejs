@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="/css/modal.css" />
+
+<form
+  action="/user/admin/create-user"
+  method="post"
+  onsubmit="createUser(this,event)"
+>
+  <div class="modal-header">
+    <h1 class="modal-title fs-5" id="exampleModalLabel">Add User</h1>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="modal"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <div class="form-item">
+      <label for="name" class="form-label">Name</label>
+
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        name="name"
+        placeholder="Enter Name"
+        required
+      />
+    </div>
+    <div class="form-item">
+      <label for="email" class="form-label">Email-Id</label>
+
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        placeholder="Enter Email-Id"
+        required
+      />
+    </div>
+
+    <div class="form-item">
+      <label for="role" class="form-label">Role</label>
+
+      <select class="form-control" name="role" id="role" required>
+        <option value="" selected disabled>Select</option>
+        <option value="Employee">Employee</option>
+        <option value="Admin">Admin</option>
+      </select>
+    </div>
+    <div class="form-item">
+      <label for="password" class="form-label">Password</label>
+
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        name="password"
+        placeholder="Enter Password"
+        required
+      />
+    </div>
+    <div class="form-item">
+      <label for="confirm_password" class="form-label">Confirm Password</label>
+
+      <input
+        type="password"
+        class="form-control"
+        id="confirm_password"
+        name="confirm_password"
+        placeholder="Confirm Password"
+        required
+      />
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+      Cancel
+    </button>
+    <button type="submit" class="btn btn-success">Create</button>
+  </div>
+</form>
